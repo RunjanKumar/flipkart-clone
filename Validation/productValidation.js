@@ -7,7 +7,8 @@ const joi = require('joi');
 /* validation for addProduct */
 const addproductSchema = joi.object({
     productName : joi.string().max(30).required(),
-    productPrice : joi.number().required(),
+    productRealPrice : joi.number().required(),
+    productDiscountPrice : joi.number(),
     productDiscount : joi.number(),
     productStock : joi.string().valid("inStock" , "outOfStock"),
     productSize : joi.string().valid("s" , "m" , "l" , "xl" ,"xxl"),

@@ -13,7 +13,7 @@ const addProduct = async(req , res) => {
     const bodyData = req.body;
     const document = new Product(bodyData);
     document.productOwner = id;
-    document.productPrice = bodyData.productPrice - discount(bodyData.productPrice , bodyData.productDiscount);
+    document.productDiscountPrice = bodyData.productRealPrice - discount(bodyData.productRealPrice , bodyData.productDiscount);
     if(req.file){
         document.productImage = req.file.path;
     }else{
