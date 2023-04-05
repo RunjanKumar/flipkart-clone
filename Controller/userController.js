@@ -86,7 +86,7 @@ const update = async ( req , res ) => {
     if(bodyData.result.password === hashPassword(bodyData.password)){
        return res.status(400).json({ StatusCode : 400,  msg : message.CURRENT_PASSWORD,  });
     }
-    await findOneAndUpdate(User , {_id : req.body.result._id} , {password : hashPassword(bodyData.password)})
+    await findOneAndUpdate(User , {_id : req.body.result._id} , {password : hashPassword(bodyData.password)});
   }
   /* update the user data */
   await findOneAndUpdate(User , {_id : req.body.result._id} , {
@@ -97,7 +97,7 @@ const update = async ( req , res ) => {
     pinCode : bodyData.pinCode,
     city : bodyData.city,
     state : bodyData.state
-  })
+  });
 
   return res.status(200).json({ StatusCode : 200,  msg : message.UPDATE  });
 };
@@ -183,7 +183,7 @@ const forgetPassword = async (req ,res ) => {
   await findOneAndUpdate(User , {_id : check._id} , {$set : {password : hashPassword(req.body.password)}});
   await findOneAndUpdate(User , {_id : check._id} , {$unset : {OTP : ""}});
   return res.status(200).json({statusCode : 200 , msg : message.UPDATE_PASSWORD});
-}
+};
 
 /*  @desc api for logout
 @route GET  /logout
@@ -191,8 +191,8 @@ const forgetPassword = async (req ,res ) => {
 @ param req , res
  */
 const logout = async ( req , res) => {
-   await findOneAndUpdate(User , {_id : req.body.result._id} , {$unset : {token : ""}})
-   return res.status(200).json({statusCode : 200 , msg : "logout"});
+   await findOneAndUpdate(User , {_id : req.body.result._id} , {$unset : {token : ""}});
+   return res.status(200).json({statusCode : 200 , msg : message.LOGOUT});
 };
 
 

@@ -34,7 +34,14 @@ module.exports = {
    /* product */
    NOT_A_VALID_PRODUCT : "product is unavialable ",
    ADD_PRODUCT : 'successfully added product',
-   ADD_IMAGE : 'please provide us a image',
+   ADD_IMAGE : 'please provide us a product Image',
    DELETE_PRODUCT : "successfully deleted product",
    NO_ACCESS_TO_DELETE : 'you have no access to delete',
+   PAGE_LIMIT : 'page and limit is exceeded',
+   NOT_A_VALID_CATEGORY : 'Now this category in not available',
+   NOT_A_VALID_DISCOUNT : 'please provide us a valid DISCOUNT',
+   INVALID_PRODUCT : 'this type of product is unavailable',
+
+   /* Cart */
+   PRODUCT_ADDED : 'product is already added into the cart',
 };

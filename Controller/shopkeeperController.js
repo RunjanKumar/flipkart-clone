@@ -19,6 +19,7 @@ const addProduct = async(req , res) => {
     }else{
         return res.status(400).json({ StatusCode : 400,  msg : message.ADD_IMAGE });
     }
+    console.log(document);
     await save(document);
     return res.status(200).json({ StatusCode : 200,  msg : message.ADD_PRODUCT });
 };
@@ -62,6 +63,7 @@ const updateProduct = async (req , res) => {
             productName : req.body.productName,
             productPrice : req.body.productPrice,
             productStock : req.body.productStock,
+            productCategory : req.body.productCategory,
             productSize : req.body.productSize,
             productTitle : req.body.productTitle,
             productDescription : req.body.productDescription
@@ -70,6 +72,9 @@ const updateProduct = async (req , res) => {
     } 
     return res.status(400).json({ StatusCode : 400,  msg :"update"});
 };
+
+
+
 
 
 module.exports = {addProduct , deleteProduct , updateProduct};

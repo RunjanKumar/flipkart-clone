@@ -16,4 +16,4 @@ shopkeeperRoute.route('/deleteproduct').post( joiValidate(deleteProductSchema) ,
 shopkeeperRoute.route('/updateproduct').post(productUpload , joiValidate(updateProductSchema) ,  userAuthentication() ,  shopkeeperAuthentication(),  updateProduct);
 
 
-module.exports = { shopkeeperRoute};
+module.exports = shopkeeperRoute ;

@@ -26,8 +26,18 @@ const create = async (collection , document)  => {
 };
 
 /* find service */
+const find = async (collection , Query)  => {
+   return await collection.find(Query);
+};
+
+/* findOne service */
 const findOne = async (collection , Query)  => {
    return await collection.findOne(Query).lean();
+};
+
+/* find service */
+const pagination = async (collection , skip , limit)  => {
+   return await collection.find({}).skip(skip).limit(limit).lean();
 };
 
 /* update service */
@@ -40,5 +50,28 @@ const findOneAndDelete = async ( collection , Query , deleteData)   => {
    return await  collection.findOneAndDelete(Query , deleteData , {new : true});
 };
 
-module.exports = { create , connection , findOne , save , findOneAndUpdate , findOneAndDelete};
+ /* Aggregate */
+// const search = async (collection , list) => {
+//       return await collection.aggregate([
+//          {$match: list}
+//       ]);
+// };
+
+const search = async (collection , list ) => {
+   return await collection.aggregate([
+      {$match: list}
+   ]);
+};
+
+module.exports = { create , 
+    connection ,
+    find,
+    findOne , 
+    save , 
+    findOneAndUpdate , 
+    findOneAndDelete,
+    pagination,
+    search,
+   
+   };
 

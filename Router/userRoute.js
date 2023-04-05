@@ -15,7 +15,7 @@ userRoute.route('/login').post( joiValidate(loginSchema) , login );
 userRoute.route('/update').put( joiValidate(updateSchema),  userAuthentication() ,update );
 userRoute.route('/profilePic').patch(upload , joiValidate(profilePicSchema) ,  userAuthentication() , profilePic);
 userRoute.route('/generateOtp').get( joiValidate(generateOTPSchema),  generateOTP);
-userRoute.route('/forgetPassword').post( joiValidate(forgetPasswordSchema) , forgetPassword)
+userRoute.route('/forgetPassword').post( joiValidate(forgetPasswordSchema) , forgetPassword);
 userRoute.route('/logout').get( userAuthentication() , logout );
 
 
