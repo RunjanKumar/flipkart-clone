@@ -19,7 +19,7 @@ const addProduct = async(req , res) => {
     }else{
         return res.status(400).json({ StatusCode : 400,  msg : message.ADD_IMAGE });
     }
-    console.log(document);
+   
     await save(document);
     return res.status(200).json({ StatusCode : 200,  msg : message.ADD_PRODUCT });
 };

@@ -81,21 +81,8 @@ const searchProductBySize = async (req , res) => {
 };
 
 
-
-
-
-
-
  module.exports = { showProduct , searchProductByCategory  , searchProductByDiscount , searchProductBySize};
 
 
 
- /* const searchProduct = async ( req , res) => {
-    console.log(req.body.productSize);
-    const result = await search(Product , { productCategory: req.body.productCategory ,
-        productSize : req.body.productSize,
-        productDiscount :  {$lt : req.body.productDiscount}
-    } , );
-    return res.status(200).json({statusCode : 200 , result});
- };
- */
+

@@ -44,4 +44,7 @@ module.exports = {
 
    /* Cart */
    PRODUCT_ADDED : 'product is already added into the cart',
+   PRODUCT_REMOVE_FROM_CART : 'product is remove from your cart',
+   PRODUCT_NOT_IN_CART : 'product is not in your cart',
+   CART_EMPTY : 'your cart is empty',
 };
